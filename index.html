@@ -8,7 +8,10 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <style>
     /* Дополнительные стили для слайдера */
-   
+    .swiper {
+      width: 100%;
+      padding: 20px 0 40px 0;
+    }
     .swiper-slide {
       height: auto;
       display: flex;
@@ -32,7 +35,17 @@
     }
     
     /* Новые стили для карточек проектов */
-
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin: 0 10px; /* Добавляем небольшие отступы по бокам */
+    }
     
     .project-card:hover {
       transform: translateY(-5px);
@@ -110,28 +123,24 @@
       text-decoration: underline;
     }
     
-     .swiper {
-    width: 100%;
-    padding: 20px 0 40px 0;
-  }
-  
-  .project-card {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    background: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin: 0 10px; /* Добавляем небольшие отступы по бокам */
-  }
-  
-  @media (max-width: 768px) {
-    .project-card {
-      margin: 0 5px; /* Меньшие отступы на мобильных */
+    @media (max-width: 768px) {
+      .swiper-button-next, 
+      .swiper-button-prev {
+        display: none;
+      }
+      
+      .project-image {
+        height: 180px;
+      }
+      
+      .project-content {
+        padding: 15px;
+      }
+      
+      .project-card {
+        margin: 0 5px; /* Меньшие отступы на мобильных */
+      }
     }
-  }
   </style>
 </head>
 <body>
@@ -324,6 +333,9 @@
   </div>
 </div>
 
+<script src="/assets/scripts/fslightbox.js"></script>
+<!-- Подключаем JS Swiper -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     const swiper = new Swiper('.projects-slider', {
@@ -352,6 +364,5 @@
     });
   });
 </script>
-
 </body>
 </html>
