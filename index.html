@@ -140,6 +140,12 @@
       .project-card {
         margin: 0 5px; /* Меньшие отступы на мобильных */
       }
+      .footer__container {
+        padding: 0 15px;
+        flex-direction: column;
+        gap: 15px; /* Уменьшенный gap для мобильных */
+        text-align: center;
+      }
     }
       .education-details {
     margin-left: 20px;
@@ -207,12 +213,13 @@
     }
     
     .footer__container {
-      max-width: 1200px; /* Такая же ширина как у основного контента */
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 0 20px; /* Такие же отступы как у слайдера */
+      padding: 0 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 30px; /* Добавьте это свойство */
     }
     
     .footer__social {
