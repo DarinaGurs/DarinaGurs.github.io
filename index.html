@@ -199,16 +199,24 @@
     margin-bottom: 15px;
   }
 
-        .footer {
+    .footer {
       margin-top: 50px;
       padding: 30px 0;
       background-color: #f8f9fa;
       border-top: 1px solid #e9ecef;
     }
     
+    .footer__container {
+      max-width: 1200px; /* Такая же ширина как у основного контента */
+      margin: 0 auto;
+      padding: 0 20px; /* Такие же отступы как у слайдера */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
     .footer__social {
       display: flex;
-      justify-content: center;
       gap: 15px;
     }
     
@@ -229,7 +237,6 @@
       height: 20px;
       margin-right: 8px;
     }
-
     
   </style>
 </head>
