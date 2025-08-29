@@ -33,10 +33,107 @@
       font-size: 20px;
       font-weight: bold;
     }
+    
+    /* Новые стили для карточек проектов */
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    }
+    
+    .project-image {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+    }
+    
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    
+    .project-card:hover .project-image img {
+      transform: scale(1.05);
+    }
+    
+    .project-content {
+      padding: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .project-title {
+      margin-bottom: 12px;
+    }
+    
+    .project-title a {
+      font-size: 18px;
+      font-weight: 600;
+      color: #333;
+      text-decoration: none;
+    }
+    
+    .project-title a:hover {
+      color: #007bff;
+    }
+    
+    .project-description {
+      flex-grow: 1;
+      margin-bottom: 15px;
+      color: #666;
+      line-height: 1.5;
+    }
+    
+    .project-stack {
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+    
+    .project-stack span {
+      font-weight: 600;
+      color: #333;
+    }
+    
+    .project-links {
+      margin-top: auto;
+    }
+    
+    .project-links a {
+      color: #007bff;
+      text-decoration: none;
+      font-size: 14px;
+      margin-right: 15px;
+    }
+    
+    .project-links a:hover {
+      text-decoration: underline;
+    }
+    
     @media (max-width: 768px) {
       .swiper-button-next, 
       .swiper-button-prev {
         display: none;
+      }
+      
+      .project-image {
+        height: 180px;
+      }
+      
+      .project-content {
+        padding: 15px;
       }
     }
   </style>
@@ -102,67 +199,108 @@
       <div class="swiper projects-slider">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
-          <!-- Slides -->
+          
+          <!-- Проект 1 -->
           <div class="swiper-slide">
-            <div class="content__main-item project">
-              <a data-fslightbox href="/assets/img/tile_map.png">
-                <img src="/assets/img/tile_map.png" alt="project1">
-              </a>
-              <div>
-                <div class="main-item__title">
-                  <a href="https://github.com/DarinaGurs/russian-median-salary-model.git"><span>Russian Median Salary Time Series Analysis (2017-2024)</span></a>
+            <div class="project-card">
+              <div class="project-image">
+                <a data-fslightbox href="/assets/img/tile_map.png">
+                  <img src="/assets/img/tile_map.png" alt="Анализ зарплат в РФ">
+                </a>
+              </div>
+              <div class="project-content">
+                <div class="project-title">
+                  <a href="https://github.com/DarinaGurs/russian-median-salary-model.git">Russian Median Salary Time Series Analysis (2017-2024)</a>
                 </div>
-                <div class="main-item__description">
-                  <p>Данное исследование направлено на всесторонний анализ и прогнозирование медианной заработной платы в РФ с применением современных методов анализа временных рядов на языке R.</p>
+                <div class="project-description">
+                  <p>Анализ и прогнозирование медианной заработной платы в РФ с применением методов анализа временных рядов на языке R. Включает сбор данных Росстата, построение прогнозных моделей и анализ межрегиональной дифференциации.</p>
                 </div>
-                <div class="main-item__subdescription">
+                <div class="project-stack">
                   <p><span>Stack:</span> R, forecast, tseries, readxl, zoo, ggplot2, tidyverse</p>
-                  <p class="main-item__links">
-                    <a href="https://github.com/DarinaGurs/russian-median-salary-model.git"><span>Source Code</span></a>
-                  </p>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/DarinaGurs/russian-median-salary-model.git">Source Code</a>
                 </div>
               </div>
             </div>
           </div>
 
+          <!-- Проект 2 -->
           <div class="swiper-slide">
-            <div class="content__main-item project">
-              <a data-fslightbox href="/assets/img/proj2.png">
-                <img src="/assets/img/proj2.png" alt="project2">
-              </a>
-              <div>
-                <div class="main-item__title">
-                  <a href="https://github.com/DarinaGurs/weather-2023-datalens-dashboard.git"><span>Weather Characteristics Dashboard</span></a>
+            <div class="project-card">
+              <div class="project-image">
+                <a data-fslightbox href="/assets/img/proj2.png">
+                  <img src="/assets/img/proj2.png" alt="Дашборд погоды">
+                </a>
+              </div>
+              <div class="project-content">
+                <div class="project-title">
+                  <a href="https://github.com/DarinaGurs/weather-2023-datalens-dashboard.git">Weather Characteristics Dashboard</a>
                 </div>
-                <div class="main-item__description">
-                  <p>Информационно-аналитическая панель для визуализации и анализа данных о погодных условиях за 2023 год.</p>
+                <div class="project-description">
+                  <p>Информационно-аналитическая панель для визуализации и анализа данных о погодных условиях за 2023 год. Анализ температурных показателей, осадков и погодных условий.</p>
                 </div>
-                <div class="main-item__subdescription">
-                  <p><span>Stack:</span> Yandex DataLens, Excel</p>
-                  <p class="main-item__links">
-                    <a href="https://datalens.yandex/4jk1yqyk9i7ur"><span>Preview</span></a>
-                  </p>
+                <div class="project-stack">
+                  <p><span>Stack:</span> Yandex DataLens, Microsoft Excel</p>
+                </div>
+                <div class="project-links">
+                  <a href="https://datalens.yandex/4jk1yqyk9i7ur">Preview</a>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Добавьте остальные проекты аналогичным образом -->
           <!-- Проект 3 -->
           <div class="swiper-slide">
-            <div class="content__main-item project">
-              <!-- содержимое проекта 3 -->
+            <div class="project-card">
+              <div class="project-image">
+                <a data-fslightbox href="/assets/img/proj3.png">
+                  <img src="/assets/img/proj3.png" alt="Дашборд звезд">
+                </a>
+              </div>
+              <div class="project-content">
+                <div class="project-title">
+                  <a href="https://github.com/DarinaGurs/star-data-datalens-dashboard.git">Stars Characteristics Dashboard</a>
+                </div>
+                <div class="project-description">
+                  <p>Информационно-аналитическая панель для визуализации и анализа астрономических данных о звездах. Исследование физических характеристик, классификации и взаимосвязей.</p>
+                </div>
+                <div class="project-stack">
+                  <p><span>Stack:</span> Yandex DataLens, Microsoft Excel</p>
+                </div>
+                <div class="project-links">
+                  <a href="https://datalens.yandex/t7iru17oyln8g">Preview</a>
+                </div>
+              </div>
             </div>
           </div>
 
           <!-- Проект 4 -->
           <div class="swiper-slide">
-            <div class="content__main-item project">
-              <!-- содержимое проекта 4 -->
+            <div class="project-card">
+              <div class="project-image">
+                <a data-fslightbox href="/assets/img/proj4.png">
+                  <img src="/assets/img/proj4.png" alt="Кластерный анализ">
+                </a>
+              </div>
+              <div class="project-content">
+                <div class="project-title">
+                  <a href="https://github.com/DarinaGurs/star-data-datalens-dashboard.git">Кластерный анализ аренды квартир</a>
+                </div>
+                <div class="project-description">
+                  <p>Изучение и применение метода кластерного анализа K-средних для сегментации рынка аренды квартир в Иркутске на основе данных о стоимости и площади.</p>
+                </div>
+                <div class="project-stack">
+                  <p><span>Stack:</span> Python 3</p>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/DarinaGurs/star-data-datalens-dashboard.git">Source Code</a>
+                </div>
+              </div>
             </div>
           </div>
 
-          <!-- Продолжайте добавлять остальные проекты... -->
+          <!-- Добавьте остальные проекты по аналогии -->
 
         </div>
 
@@ -196,7 +334,6 @@
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     const swiper = new Swiper('.projects-slider', {
-      // Настройки слайдера
       loop: true,
       slidesPerView: 1,
       spaceBetween: 30,
@@ -208,7 +345,6 @@
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
       },
-      // Адаптивность
       breakpoints: {
         640: {
           slidesPerView: 1,
@@ -217,7 +353,7 @@
           slidesPerView: 2,
         },
         1024: {
-          slidesPerView: 2,
+          slidesPerView: 3,
         },
       }
     });
